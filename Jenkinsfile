@@ -1,6 +1,8 @@
 pipeline {
   environment {
-    dockerhubCredentials = 'docjibo'
+    registry = "docjibo/capstone"
+    registryCredential = 'docjibo'
+    dockerImage = ''
   }
   agent any
   stages {
@@ -20,7 +22,7 @@ pipeline {
     stage('Build docker') {
       steps {
         script {
-          app = docker.build("docjibo/capstone")
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
 
       }
@@ -35,9 +37,9 @@ pipeline {
     stage('Publish docker') {
       steps {
         script {
-          docker.withRegistry('', dockerhubCredentials) {
-            app.push("${env.GIT_COMMIT}")
-            app.push("latest")
+          docker.withRegistry('', registryCredential) {
+            dockerImage.push("${env.GIT_COMMIT}")
+            dockerImage.push("latest")
           }
         }
 
