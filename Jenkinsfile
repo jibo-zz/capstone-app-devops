@@ -39,6 +39,14 @@ pipeline {
 
       }
     }
+
+    stage('Remove Image from Jenkins') {
+      steps {
+          sh "docker rmi $registry:$BUILD_NUMBER"
+          sh "docker rmi $registry:latest"
+      }
+    }
+
     stage('Deploy to Kubernetes') {
       steps {
         retry(3) {

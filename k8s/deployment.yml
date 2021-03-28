@@ -28,7 +28,7 @@ spec:
         image: docjibo/capstone:latest
         imagePullPolicy: "Always"
         ports:
-        - containerPort: 80
+        - containerPort: 5000
         volumeMounts:
           - mountPath: /app/static/uploads
             name: uploads
