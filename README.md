@@ -32,9 +32,3 @@ With these following steps you have now a cluster deployed.
 
 You can find deployment and service files for Kubernetes.
 It will setup a loadbalancer endpoint to connect to the application
-
-## Access the demo 
-
-http://a1f9fbbaf45ee435697ed81d2f5cab4d-1329538271.eu-west-1.elb.amazonaws.com/
-
-This endpoint will be available only during review time from Udacity.
