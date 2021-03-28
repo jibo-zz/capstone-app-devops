@@ -13,9 +13,9 @@ This project uses cloudformation to create an EKS cluster on AWS.
 To create the cluster and nodes:
 
 ```bash
-./do_stack.sh create network
-./do_stack.sh create eks
-./do_stack.sh create eks-nodes
+./infra_stack.sh create network
+./infra_stack.sh create eks
+./infra_stack.sh create eks-nodes
 ```
 
 With these following steps you have now a cluster deployed.
