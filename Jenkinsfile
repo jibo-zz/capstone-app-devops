@@ -28,12 +28,6 @@ pipeline {
       }
     }
 
-    // stage('Scan image') {
-    //   steps {
-    //     aquaMicroscanner(imageName: 'docjibo/capstone', notCompliesCmd: 'exit 4', onDisallowed: 'ignore', outputFormat: 'html')
-    //   }
-    // }
-
     stage('Publish docker') {
       steps {
         script {
@@ -51,8 +45,8 @@ pipeline {
           withAWS(region:'us-east-1',credentials:'awscreds') {
             sh 'echo "Deploy to Kube"'
             sh "aws eks --region us-east-1 update-kubeconfig --name capstone"
-            sh 'sed -ie "s/latest/${GIT_COMMIT}/g" kubernetes/deployment.yml'
-            sh "kubectl apply -f kubernetes/deployment.yml"
+            sh 'sed -ie "s/latest/${GIT_COMMIT}/g" k8s/deployment.yml'
+            sh "kubectl apply -f k8s/deployment.yml"
           }
         }
       }
