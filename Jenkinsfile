@@ -1,4 +1,7 @@
 pipeline {
+  environment {
+    dockerhubCredentials = 'docjibo'
+  }
   agent any
   stages {
     stage('Install dependencies') {
@@ -52,9 +55,5 @@ pipeline {
         }
       }
     }
-
-  }
-  environment {
-    dockerhubCredentials = 'dockerhubCredentials'
   }
 }
