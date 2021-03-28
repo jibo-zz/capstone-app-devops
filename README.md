@@ -32,3 +32,8 @@ With these following steps you have now a cluster deployed.
 
 You can find deployment and service files for Kubernetes.
 It will setup a loadbalancer endpoint to connect to the application
+
+## Github URL
+
+https://github.com/jibo-zz/capstone-app-devops
+
