@@ -42,7 +42,7 @@ pipeline {
     stage('Deploy to Kubernetes') {
       steps {
         retry(3) {
-          withAWS(region:'us-east-1',credentials:'awscreds') {
+          withAWS(region:'us-east-1',credentials:'5da7debc-01ac-471d-8166-221a5a5ec152') {
             sh 'echo "Deploy to Kube"'
             sh "aws eks --region us-east-1 update-kubeconfig --name capstone"
             sh 'sed -ie "s/latest/${GIT_COMMIT}/g" k8s/deployment.yml'
