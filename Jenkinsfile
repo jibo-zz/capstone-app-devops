@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "docjibo/capstone"
-    registryCredential = 'docjibo'
+    registryCredential = 'dockerhub_id'
     dockerImage = ''
   }
   agent any
