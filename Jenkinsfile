@@ -23,11 +23,11 @@ pipeline {
       }
     }
 
-    stage('Scan image') {
-      steps {
-        aquaMicroscanner(imageName: 'docjibo/capstone', notCompliesCmd: 'exit 4', onDisallowed: 'ignore', outputFormat: 'html')
-      }
-    }
+    // stage('Scan image') {
+    //   steps {
+    //     aquaMicroscanner(imageName: 'docjibo/capstone', notCompliesCmd: 'exit 4', onDisallowed: 'ignore', outputFormat: 'html')
+    //   }
+    // }
 
     stage('Publish docker') {
       steps {

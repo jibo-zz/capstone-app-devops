@@ -1,15 +1,10 @@
-# udacity-Project5-capstone
-Udacity Devops nanodegree Capstone project
+# Python Flask - Demo Web Application
 
+This is a simple Python Flask web application. The app provides system information and a realtime monitoring screen with dials showing CPU, memory, IO and process information.
 
-## About the app
+The app has been designed with cloud native demos & containers in mind, in order to provide a real working application for deployment, something more than "hello-world" but with the minimum of pre-reqs. It is not intended as a complete example of a fully functioning architecture or complex software design.
 
-This app is a quick project using flask and AWS Textract.
-
-You can submit a png or jpeg containing text, like a scan document.
-After uploading it, the text will be extracted.
-
-This is a quick demo :) There's no beautiful interface nor a good output for the extracted text.
+Typical uses would be deployment to Kubernetes, demos of Docker, CI/CD (build pipelines are provided), deployment to cloud (aws) monitoring, auto-scaling
 
 ## Setup infrastructure
 
